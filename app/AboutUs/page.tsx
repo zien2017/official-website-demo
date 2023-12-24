@@ -46,7 +46,7 @@ export default async function Home() {
         </div>
       </div>
       <div className="my-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-2 xl:px-0">
-        {articals.map(({ title, description, demo, large }) => (
+        {Articles.map(({ title, description, demo, large }) => (
           <Card
             key={title}
             title={title}
@@ -71,7 +71,7 @@ export default async function Home() {
   );
 }
 
-const articals = [
+const Articles = [
 
   {
     title: "Our Mission",
@@ -94,9 +94,9 @@ const articals = [
     ),
   },
   {
-    title: "Artical 1",
+    title: "Article 1",
     description:
-      "Artical Artical Artical Artical Artical Artical",
+      "Article Article Article Article Article Article",
     demo: (
       <a href={OMNIND_URL}>
         <Image
@@ -111,9 +111,9 @@ const articals = [
   },
 
   {
-    title: "Artical 2",
+    title: "Article 2",
     description:
-      "Artical Artical Artical Artical Artical Artical",
+      "Article Article Article Article Article Article",
     demo: (
       <a href={OMNIND_URL}>
         <Image

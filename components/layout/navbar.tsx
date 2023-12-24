@@ -18,7 +18,7 @@ export default function NavBar() {
     <>
       {/* <SignInModal /> */}
       <div
-        className={`fixed top-100 w-full flex justify-center ${
+        className={`relative top-0  w-full flex justify-center ${
           scrolled
             ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
             : "bg-white/0"

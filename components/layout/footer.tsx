@@ -21,7 +21,7 @@ export default function Footer() {
       <div className="w-full py-16 text-center backdrop-blur-xl bg-white bg-opacity-90">
         <div className="flex flex-row">
         <div className="flex-1 p-10 border-r border-black">
-          <p>This is a searchbar.</p>
+          <p>This is a subscription bar.</p>
         </div>
         <div className="flex-1 p-10">
           <p>There are some links.</p>

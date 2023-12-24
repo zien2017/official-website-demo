@@ -8,45 +8,24 @@ import { nFormatter } from "@/lib/utils";
 
 
 export default async function Home() {
-  const { stargazers_count: stars } = await fetch(
-    "https://api.github.com/repos/steven-tey/precedent",
-    {
-      ...(process.env.GITHUB_OAUTH_TOKEN && {
-        headers: {
-          Authorization: `Bearer ${process.env.GITHUB_OAUTH_TOKEN}`,
-          "Content-Type": "application/json",
-        },
-      }),
-      // data will revalidate every 24 hours
-      next: { revalidate: 86400 },
-    },
-  )
-    .then((res) => res.json())
-    .catch((e) => console.log(e));
 
   return (
     <>
-      <div className="z-10 w-full max-w-xl px-5 xl:px-0">
-        <h1
-          className="animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm [text-wrap:balance] md:text-7xl md:leading-[5rem]"
-          style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
-        >
-          Omnind
-        </h1>
-        <p
-          className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 [text-wrap:balance] md:text-xl"
-          style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
-        >
-          Omnind
-        </p>
-        <div
-          className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
-          style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
-        >
+      <div className="w-full py-32 text-center backdrop-blur-xl bg-blue-500 bg-opacity-50">
+        <div className="flex flex-row">
+        <div className="flex-1 p-10 border-r border-black">
+          <p>Our Mission
+            <br />
+            Our Slogan
+          </p>
+        </div>
+        <div className="flex-1 p-10">
+          <p>some Anime</p>
+        </div>
         </div>
       </div>
-      <div className="my-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-2 xl:px-0">
-        {articals.map(({ title, description, demo, large }) => (
+      <div className="my-10  grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-2 xl:px-0">
+        {Articles.map(({ title, description, demo, large }) => (
           <Card
             key={title}
             title={title}
@@ -55,6 +34,18 @@ export default async function Home() {
             large={large}
           />
         ))}
+      </div>
+      <div className="w-full py-16 text-center backdrop-blur-xl bg-white bg-opacity-0 ">
+        <a
+            href="https://omnind.com"
+            target="_blank"
+            rel="noreferrer"
+            className="mx-auto mt-0 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
+          >
+            <p className="text-sm font-semibold text-[#1d9bf0]">
+              New at Omnind's blog
+            </p>
+        </a>
       </div>
       <div className="my-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0">
         {cases.map(({ title, description, demo, large }) => (
@@ -71,32 +62,49 @@ export default async function Home() {
   );
 }
 
-const articals = [
+const Articles = [
 
   {
-    title: "Our Mission",
+    title: "Article 1",
     description:
       "Our Mission Our Mission Our Mission Our Mission",
-    demo: <WebVitals />,
+    demo: (
+      <a href={OMNIND_URL}>
+      <Image
+        src="https://vercel.com/button"
+        alt="Deploy with Vercel"
+        width={120}
+        height={30}
+        unoptimized
+      />
+    </a>
+    ),
+    large: false,
   },
   {
+    title: "",
+    description:"",
     demo: (
       <div className="flex items-center justify-center space-x-20">
         <Image alt="pic" src="/home-001.png" layout="fill" objectFit="cover" />
       </div>
     ),
+    large: false,
   },
   {
+    title: "",
+    description:"",
     demo: (
       <div className="flex items-center justify-center space-x-20">
         <Image alt="pic" src="/home-002.png" layout="fill" objectFit="cover" />
       </div>
     ),
+    large: false,
   },
   {
-    title: "Artical 1",
+    title: "Article 2",
     description:
-      "Artical Artical Artical Artical Artical Artical",
+      "Article Article Article Article Article Article",
     demo: (
       <a href={OMNIND_URL}>
         <Image
@@ -108,12 +116,13 @@ const articals = [
         />
       </a>
     ),
+    large: false,
   },
 
   {
-    title: "Artical 2",
+    title: "Article 3",
     description:
-      "Artical Artical Artical Artical Artical Artical",
+      "Article Article Article Article Article Article",
     demo: (
       <a href={OMNIND_URL}>
         <Image
@@ -125,13 +134,17 @@ const articals = [
         />
       </a>
     ),
+    large: false,
   },
   {
+    title: "",
+    description:"",
     demo: (
       <div className="flex items-center justify-center space-x-20">
         <Image alt="Auth.js logo" src="/home-003.png" layout="fill" objectFit="cover" />
       </div>
     ),
+    large: false,
   },
 ];
 
@@ -152,6 +165,7 @@ const cases = [
         />
       </a>
     ),
+    large: false,
   },
 
   {
