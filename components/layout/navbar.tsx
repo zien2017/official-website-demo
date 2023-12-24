@@ -5,18 +5,18 @@ import Link from "next/link";
 import useScroll from "@/lib/hooks/use-scroll";
 import { useSignInModal } from "./sign-in-modal";
 import UserDropdown from "./user-dropdown";
-// import { Session } from "next-auth";
+import { Session } from "next-auth";
 
 
 
-export default function NavBar() {
-  // const { SignInModal, setShowSignInModal } = useSignInModal();
+export default function NavBar({ session }: { session: Session | null }) {
+  const { SignInModal, setShowSignInModal } = useSignInModal();
   const scrolled = useScroll(50);
 
 
   return (
     <>
-      {/* <SignInModal /> */}
+      <SignInModal />
       <div
         className={`relative top-0  w-full flex justify-center ${
           scrolled

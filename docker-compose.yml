@@ -1,15 +1,5 @@
 version: '3'
 services:
-  db:
-    image: postgres
-    ports:
-      - "5432:5432"
-    networks:
-      - app-network
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
   app:
     build: .
     ports:
@@ -19,8 +9,3 @@ services:
       POSTGRES_URL_NON_POOLING: postgresql://postgres:postgres@db:5432/postgres?connection_limit=1
     depends_on:
       - db
-    networks:
-      - app-network
-networks:
-  app-network:
-    driver: bridge

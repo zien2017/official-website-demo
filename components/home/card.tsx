@@ -14,9 +14,9 @@ export default function Card({
 }) {
   return (
     <div
-      className={`relative col-span-1 h-96 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md ${
+      className={`relative col-span-1 h-96 overflow-hidden  border border-gray-200 bg-white shadow-md ${
         large ? "md:col-span-2" : ""
-      }`}
+      } hover:scale-105 hover:z-10 transition-transform duration-200 ease-in-out`}
     >
       <div className="mx-auto max-w-md text-center justify-center mt-20 mb-20">
         <h2 className="bg-gradient-to-br from-black to-stone-500 bg-clip-text font-display text-xl font-bold text-transparent [text-wrap:balance] md:text-3xl md:font-normal">

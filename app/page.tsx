@@ -24,7 +24,7 @@ export default async function Home() {
         </div>
         </div>
       </div>
-      <div className="my-10  grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-2 xl:px-0">
+      <div className="my-10  grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-0 px-5 md:grid-cols-2 xl:px-0">
         {Articles.map(({ title, description, demo, large }) => (
           <Card
             key={title}
@@ -43,11 +43,11 @@ export default async function Home() {
             className="mx-auto mt-0 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
           >
             <p className="text-sm font-semibold text-[#1d9bf0]">
-              New at Omnind's blog
+              New at Omnind&apos;s blog
             </p>
         </a>
       </div>
-      <div className="my-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0">
+      <div className="my-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-1 px-5 md:grid-cols-3 xl:px-0">
         {cases.map(({ title, description, demo, large }) => (
           <Card
             key={title}
